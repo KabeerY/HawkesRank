@@ -1,0 +1,54 @@
+# Replace every TODO before portal submission.
+team_name: "TODO_TEAM_NAME"
+
+primary_contact:
+  name: "TODO_PRIMARY_CONTACT"
+  email: "TODO_EMAIL"
+  phone: "TODO_PHONE"
+
+team_members:
+  - name: "TODO_MEMBER_NAME"
+    email: "TODO_MEMBER_EMAIL"
+    role: "ML Engineer"
+
+github_repo: "https://github.com/KabeerY/HawkesRank"
+sandbox_link: "TODO_HOSTED_SANDBOX_URL"
+reproduce_command: "python3 rank.py --candidates ./candidates.jsonl --output-root ."
+
+compute:
+  platform: "Apple Silicon Mac (Darwin arm64)"
+  cpu_cores: "TODO_CONFIRM_CORE_COUNT"
+  ram_gb: "TODO_CONFIRM_RAM_GB"
+  python_version: "3.12.13"
+  os: "macOS 26.5.1"
+  uses_gpu_for_inference: false
+  has_network_during_ranking: false
+  pre_computation_required: false
+  pre_computation_time_minutes: 0
+
+ai_tools_used:
+  - "OpenAI Codex"
+
+ai_usage_summary: |
+  OpenAI Codex was used for bundle analysis, implementation support, code review,
+  testing, and documentation. Candidate ranking is deterministic and uses no LLM,
+  GPU, network call, or external service. No candidate data is sent to an LLM at
+  ranking time.
+
+methodology_summary: |
+  HawkesRank is a deterministic two-pass professional-state ranker. Pass 1 streams
+  all 100,000 profiles, assigns evidence-bounded career bands, and retains 2,000
+  candidates. Pass 2 builds traceable evidence ledgers and reranks using direct
+  search/ranking proof, production ownership, evaluation maturity, experience,
+  career-corroborated skills, bounded behavior/logistics, hard-negative suppression,
+  and narrow multi-signal risk checks. Skills cannot manufacture relevance, broad
+  synthetic anomalies remain weak, and behavior can reorder but not redefine a
+  candidate's technical band. It runs CPU-only with no network or third-party
+  dependencies; the measured full run is approximately 73 seconds and 72 MB RSS.
+
+declarations:
+  read_submission_spec: true
+  code_is_original_work: true
+  no_collusion: true
+  honeypot_check_done: true
+  reproduction_tested: true

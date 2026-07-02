@@ -1,0 +1,191 @@
+{
+  "candidate_records_scanned": 100000,
+  "pool_size": 2000,
+  "inspection_size": 300,
+  "final_size": 100,
+  "runtime_seconds": 72.7654,
+  "max_rss_mb": 72.33,
+  "submission_sha256": "6740a92f6d1b781e6510aca3fce15269f48416523ca2363b78597f6d79b587a2",
+  "strict_validation_errors": [],
+  "all_candidate_band_distribution": {
+    "data_backend_adjacent": 8284,
+    "low_relevance": 68823,
+    "applied_ml": 1837,
+    "software_adjacent": 20905,
+    "direct_search_ranking": 127,
+    "senior_relevance_owner": 24
+  },
+  "top_2000_band_distribution": {
+    "senior_relevance_owner": 25,
+    "direct_search_ranking": 126,
+    "applied_ml": 1837,
+    "data_backend_adjacent": 12
+  },
+  "top_100_band_distribution": {
+    "senior_relevance_owner": 25,
+    "direct_search_ranking": 75
+  },
+  "top_20_archetypes": [
+    {
+      "rank": 1,
+      "candidate_id": "CAND_0046525",
+      "band": "senior_relevance_owner",
+      "subtype": "relevance_ownership",
+      "title": "Senior Machine Learning Engineer",
+      "score": 213.5
+    },
+    {
+      "rank": 2,
+      "candidate_id": "CAND_0086022",
+      "band": "senior_relevance_owner",
+      "subtype": "search_ranking",
+      "title": "Senior Applied Scientist",
+      "score": 211.66
+    },
+    {
+      "rank": 3,
+      "candidate_id": "CAND_0018499",
+      "band": "senior_relevance_owner",
+      "subtype": "search_ranking",
+      "title": "Senior Machine Learning Engineer",
+      "score": 211.36
+    },
+    {
+      "rank": 4,
+      "candidate_id": "CAND_0077337",
+      "band": "senior_relevance_owner",
+      "subtype": "search_ranking",
+      "title": "Staff Machine Learning Engineer",
+      "score": 209.91
+    },
+    {
+      "rank": 5,
+      "candidate_id": "CAND_0081846",
+      "band": "senior_relevance_owner",
+      "subtype": "search_ranking",
+      "title": "Lead AI Engineer",
+      "score": 209.4258
+    },
+    {
+      "rank": 6,
+      "candidate_id": "CAND_0071974",
+      "band": "senior_relevance_owner",
+      "subtype": "search_ranking",
+      "title": "Senior AI Engineer",
+      "score": 206.1888
+    },
+    {
+      "rank": 7,
+      "candidate_id": "CAND_0055905",
+      "band": "senior_relevance_owner",
+      "subtype": "hybrid_retrieval",
+      "title": "Senior Machine Learning Engineer",
+      "score": 204.22976
+    },
+    {
+      "rank": 8,
+      "candidate_id": "CAND_0008425",
+      "band": "senior_relevance_owner",
+      "subtype": "hybrid_retrieval",
+      "title": "Senior NLP Engineer",
+      "score": 203.24832
+    },
+    {
+      "rank": 9,
+      "candidate_id": "CAND_0080766",
+      "band": "senior_relevance_owner",
+      "subtype": "recommendation",
+      "title": "Staff Machine Learning Engineer",
+      "score": 203.02354
+    },
+    {
+      "rank": 10,
+      "candidate_id": "CAND_0088025",
+      "band": "senior_relevance_owner",
+      "subtype": "search_ranking",
+      "title": "Staff Machine Learning Engineer",
+      "score": 200.0946
+    },
+    {
+      "rank": 11,
+      "candidate_id": "CAND_0094759",
+      "band": "senior_relevance_owner",
+      "subtype": "relevance_ownership",
+      "title": "Lead AI Engineer",
+      "score": 198.26096
+    },
+    {
+      "rank": 12,
+      "candidate_id": "CAND_0011687",
+      "band": "senior_relevance_owner",
+      "subtype": "search_ranking",
+      "title": "Senior NLP Engineer",
+      "score": 197.4888
+    },
+    {
+      "rank": 13,
+      "candidate_id": "CAND_0002025",
+      "band": "senior_relevance_owner",
+      "subtype": "search_ranking",
+      "title": "Senior AI Engineer",
+      "score": 197.44544
+    },
+    {
+      "rank": 14,
+      "candidate_id": "CAND_0039754",
+      "band": "senior_relevance_owner",
+      "subtype": "search_ranking",
+      "title": "Senior Applied Scientist",
+      "score": 196.382
+    },
+    {
+      "rank": 15,
+      "candidate_id": "CAND_0037980",
+      "band": "senior_relevance_owner",
+      "subtype": "search_ranking",
+      "title": "Senior Applied Scientist",
+      "score": 195.12068
+    },
+    {
+      "rank": 16,
+      "candidate_id": "CAND_0041611",
+      "band": "senior_relevance_owner",
+      "subtype": "search_ranking",
+      "title": "Staff Machine Learning Engineer",
+      "score": 191.894
+    },
+    {
+      "rank": 17,
+      "candidate_id": "CAND_0005538",
+      "band": "senior_relevance_owner",
+      "subtype": "relevance_ownership",
+      "title": "Senior AI Engineer",
+      "score": 190.66536
+    },
+    {
+      "rank": 18,
+      "candidate_id": "CAND_0030468",
+      "band": "senior_relevance_owner",
+      "subtype": "relevance_ownership",
+      "title": "Senior Applied Scientist",
+      "score": 190.096
+    },
+    {
+      "rank": 19,
+      "candidate_id": "CAND_0006567",
+      "band": "senior_relevance_owner",
+      "subtype": "relevance_ownership",
+      "title": "Senior AI Engineer",
+      "score": 189.91592
+    },
+    {
+      "rank": 20,
+      "candidate_id": "CAND_0092278",
+      "band": "senior_relevance_owner",
+      "subtype": "search_ranking",
+      "title": "Senior NLP Engineer",
+      "score": 187.174
+    }
+  ],
+  "risky_top_100_count": 6
+}
