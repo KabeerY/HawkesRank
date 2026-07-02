@@ -10,7 +10,8 @@ from typing import Any
 import streamlit as st
 
 
-ROOT = Path(__file__).resolve().parents[1]
+APP_DIR = Path(__file__).resolve().parent
+ROOT = APP_DIR if (APP_DIR / "sample_candidates.json").exists() else APP_DIR.parent
 if str(ROOT) not in sys.path:
     sys.path.insert(0, str(ROOT))
 
