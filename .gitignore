@@ -1,0 +1,19 @@
+__pycache__/
+*.py[cod]
+.DS_Store
+.venv/
+venv/
+.streamlit/secrets.toml
+
+# Keep organizer-provided bundle files local; publish only our implementation,
+# a small demo sample, and generated submission artifacts.
+candidates.jsonl
+candidates.jsonl.gz
+README.docx
+job_description.docx
+submission_spec.docx
+redrob_signals_doc.docx
+candidate_schema.json
+sample_submission.csv
+submission_metadata_template.yaml
+validate_submission.py
