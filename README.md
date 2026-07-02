@@ -2,6 +2,10 @@
 
 HawkesRank is a deterministic, CPU-only candidate ranker for the Redrob Intelligent Candidate Discovery challenge. Its central decision is simple: **career evidence establishes professional relevance; vocabulary only corroborates it**.
 
+[![Live demo](https://img.shields.io/badge/Live_Demo-Hugging_Face-FFD21E?logo=huggingface&logoColor=111)](https://huggingface.co/spaces/KabeerY/HawkesRank)
+[![CPU only](https://img.shields.io/badge/Inference-CPU_only-1E6B57)](https://huggingface.co/spaces/KabeerY/HawkesRank)
+[![No external APIs](https://img.shields.io/badge/Ranking-No_external_APIs-D85F3D)](docs/methodology.md)
+
 The submitted system makes no network calls, uses no hosted or local LLM, requires no GPU, and has no third-party ranking dependencies. On the released 100,000-profile JSONL it completes in about 73 seconds with approximately 72 MB peak resident memory on the development Mac.
 
 ## Result
@@ -90,4 +94,4 @@ final/submission.xlsx          review-friendly mirror; do not upload as the offi
 4. Upload the CSV—not the XLSX. The workbook is only for human review.
 5. Submit the repository URL, runnable sandbox link, contact details, AI-tool declaration, compute summary, and methodology summary through the portal.
 
-The small-sample sandbox implementation and Docker recipe are ready in [`demo/`](demo/README.md). Deployment requires your Hugging Face/Streamlit account; after publishing it, paste the public URL into `submission_metadata.yaml`.
+The deployed small-sample sandbox is available on [Hugging Face Spaces](https://huggingface.co/spaces/KabeerY/HawkesRank). Its implementation and Docker recipe are in [`demo/`](demo/README.md).

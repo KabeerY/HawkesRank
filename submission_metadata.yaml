@@ -12,7 +12,7 @@ team_members:
     role: "ML Engineer"
 
 github_repo: "https://github.com/KabeerY/HawkesRank"
-sandbox_link: "TODO_HOSTED_SANDBOX_URL"
+sandbox_link: "https://huggingface.co/spaces/KabeerY/HawkesRank"
 reproduce_command: "python3 rank.py --candidates ./candidates.jsonl --output-root ."
 
 compute:
