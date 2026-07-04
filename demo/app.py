@@ -103,6 +103,12 @@ st.markdown(
     [data-testid="stFileUploaderDropzone"] {
         background: #22302c; border: 1px dashed #7f938c; border-radius: 14px;
     }
+    [data-testid="stSidebar"] [data-testid="stFileUploaderDropzoneInstructions"] span {
+        color: #f4f0e6 !important;
+    }
+    [data-testid="stSidebar"] [data-testid="stFileUploaderDropzoneInstructions"] small {
+        color: #bdc9c3 !important;
+    }
     .hr-hero {
         background: linear-gradient(120deg, #17211f 0%, #263934 62%, #355248 100%);
         border-radius: 24px; padding: 38px 42px; color: #fbf7ed; margin-bottom: 24px;
@@ -117,6 +123,7 @@ st.markdown(
     .hr-subtitle { color: #d8e1dc; max-width: 720px; font-size: 17px; line-height: 1.6; }
     .hr-pill { display: inline-block; padding: 7px 11px; margin: 14px 7px 0 0; border-radius: 99px;
         background: rgba(255,255,255,.09); border: 1px solid rgba(255,255,255,.15); font-size: 12px; }
+    .hr-scope-note { color: #52605b; font-size: 13px; margin: -10px 2px 20px; }
     .hr-metrics { display: grid; grid-template-columns: repeat(4, minmax(0,1fr)); gap: 12px; margin: 4px 0 26px; }
     .hr-metric { background: #fffdf8; border: 1px solid #ded8cb; border-radius: 16px; padding: 18px 20px; }
     .hr-metric-label { color: #6f756f; font-size: 12px; font-weight: 700; text-transform: uppercase; letter-spacing: .08em; }
@@ -141,6 +148,11 @@ st.markdown(
       <span class="hr-pill">Deterministic</span><span class="hr-pill">CPU only</span><span class="hr-pill">No external APIs</span><span class="hr-pill">Explainable by design</span>
     </section>
     """,
+    unsafe_allow_html=True,
+)
+
+st.markdown(
+    '<div class="hr-scope-note">Sandbox ranks uploaded samples ≤100 profiles. Official <code>rank.py</code> processes the full 100K pool in ~73 seconds.</div>',
     unsafe_allow_html=True,
 )
 
@@ -171,14 +183,14 @@ except (ValueError, KeyError, TypeError, json.JSONDecodeError) as exc:
 top_band = ledgers[0].band_name if ledgers else "n/a"
 top_n = min(10, len(ledgers))
 top_open = sum(ledger.behavior["open_to_work"] for ledger in ledgers[:top_n])
-material_risks = sum(any(not flag.startswith("weak:") for flag in ledger.risk_flags) for ledger in ledgers)
+review_flags = sum(any(not flag.startswith("weak:") for flag in ledger.risk_flags) for ledger in ledgers)
 st.markdown(
     f"""
     <div class="hr-metrics">
       <div class="hr-metric"><div class="hr-metric-label">Profiles ranked</div><div class="hr-metric-value">{len(ledgers)}</div></div>
       <div class="hr-metric"><div class="hr-metric-label">Highest evidence state</div><div class="hr-metric-value">{humanize(top_band)}</div></div>
       <div class="hr-metric"><div class="hr-metric-label">Top-{top_n} open to work</div><div class="hr-metric-value">{top_open} / {top_n}</div></div>
-      <div class="hr-metric"><div class="hr-metric-label">Material risk flags</div><div class="hr-metric-value">{material_risks}</div></div>
+      <div class="hr-metric"><div class="hr-metric-label">Review flags</div><div class="hr-metric-value">{review_flags}</div></div>
     </div>
     """,
     unsafe_allow_html=True,
