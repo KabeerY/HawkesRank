@@ -4,6 +4,10 @@ This Streamlit app is the isolated small-sample demo required by the competition
 
 Live deployment: [huggingface.co/spaces/KabeerY/HawkesRank](https://huggingface.co/spaces/KabeerY/HawkesRank)
 
+The production Space card is maintained in
+[`HUGGINGFACE_README.md`](HUGGINGFACE_README.md). Copy that file to `README.md`
+at the root of the Hugging Face Space when publishing the demo.
+
 Run locally from the repository root:
 
 ```bash

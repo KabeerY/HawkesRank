@@ -10,7 +10,10 @@ The submitted system makes no network calls, uses no hosted or local LLM, requir
 
 ## Result
 
-The canonical output is [`final/submission.csv`](final/submission.csv). It contains exactly 100 unique candidates, ranks 1–100, strictly decreasing scores, and one grounded 1–2 sentence explanation per candidate.
+The machine-validated canonical output is [`final/submission.csv`](final/submission.csv),
+with [`final/submission.xlsx`](final/submission.xlsx) as the current portal-upload
+mirror. Both contain exactly 100 unique candidates, ranks 1–100, strictly
+decreasing scores, and one grounded 1–2 sentence explanation per candidate.
 
 Latest measured run:
 
@@ -48,6 +51,8 @@ python3 -m unittest discover -s tests -v
 
 ## Architecture
 
+![HawkesRank two-pass evidence-first candidate ranking architecture](assets/hawkesrank-architecture.png)
+
 HawkesRank uses two passes over the JSONL:
 
 1. **Professional-state recall.** A compact typed state is extracted while streaming all 100,000 records. Evidence from the current role and career history assigns one of six bounded professional bands. A fixed-size heap retains the best 2,000 profiles.
@@ -72,6 +77,7 @@ Every score is decomposed into the components required for inspection in [`outpu
 
 ```text
 rank.py                         single reproduction entry point
+assets/                         architecture and documentation visuals
 hawkesrank/evidence.py         typed states, evidence extraction, bands and risk flags
 hawkesrank/scoring.py          transparent component scoring and ablations
 hawkesrank/reasoning.py        grounded candidate explanations
@@ -79,19 +85,22 @@ hawkesrank/pipeline.py         streaming two-pass pipeline and artifact generati
 hawkesrank/validation.py       strict submission validation and hashing
 tests/test_hawkesrank.py       ranking invariants
 demo/                          isolated Streamlit/Docker small-sample sandbox
+demo/HUGGINGFACE_README.md     deploy-ready Hugging Face Space card
 docs/methodology.md            design, tradeoffs, and observed dataset structure
 candidate_archetypes.md        full-dataset discovery report
 outputs/                       inspection, breakdown, ablation, and run reports
-final/submission.csv           file to upload after renaming to participant ID
-final/submission.xlsx          review-friendly mirror; do not upload as the official entry
+final/submission.csv           canonical validator and reproducibility artifact
+final/submission.xlsx          current portal-upload workbook mirroring the CSV
 ```
 
 ## Submission checklist
 
 1. Replace the `TODO` identity, GitHub, and sandbox fields in `submission_metadata.yaml`.
-2. Rename `final/submission.csv` to the registered participant ID, such as `team_xxx.csv`.
-3. Run both validators on the renamed CSV.
-4. Upload the CSV—not the XLSX. The workbook is only for human review.
+2. Run both validators on `final/submission.csv`.
+3. Confirm `final/submission.xlsx` mirrors the validated CSV, then rename it if
+   the portal requires the registered participant ID.
+4. Upload the XLSX in the portal's spreadsheet field and retain the CSV as the
+   machine-verifiable source artifact.
 5. Submit the repository URL, runnable sandbox link, contact details, AI-tool declaration, compute summary, and methodology summary through the portal.
 
 The deployed small-sample sandbox is available on [Hugging Face Spaces](https://huggingface.co/spaces/KabeerY/HawkesRank). Its implementation and Docker recipe are in [`demo/`](demo/README.md).
